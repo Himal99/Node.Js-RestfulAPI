@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap-theme.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <div class="container">
+        <h1 class="text-center"><b>Complete CRUD aplication form Node.Js</b></h1>
+        <h1 class="text-center">Customers page</h1>
+
+        <div class="pull-right">
+            <a href="/customer/create">
+                <span class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></span>
+
+            </a>
+        </div>
+        <br>
+        <br>
+        <table class="table table-hover table-striped table-bordered">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Phoe no</th>
+                <th>Action</th>
+            </tr>
+
+            <% customer.forEach((row,index)=>{%>
+                <tr>
+                    <td>
+                        <%=row.name%>
+                    </td>
+                    <td>
+                        <%=row.email%>
+                    </td>
+                    <td>
+                        <%=row.address%>
+                    </td>
+                    <td>
+                        <%=row.phone%>
+                    </td>
+                    <td>
+                        <a href="/customer/edit/<%=row.id%>"> <span class="btn btn-primary">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                            </span>
+                        </a>
+                        <a href="/customer/delete/<%=row.id%>">
+                            <span class="btn btn-danger">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </span>
+                        </a>
+                    </td>
+
+                </tr>
+                <% })%>
+
+
+        </table>
+
+    </div>
+</body>
+
+</html>
